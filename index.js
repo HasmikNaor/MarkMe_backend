@@ -21,10 +21,6 @@ app.use(express.json());
 
 app.use(templates);
 
-// app.use((req, res, next) => {
-//   next(new ResourceNotFoundErr("resource not found"));
-// });
-
 app.use(errors());
 
 app.use((err, req, res, next) => {
@@ -38,9 +34,6 @@ app.post("*", async (req, res) => {
   res.send(await handler(req));
 });
 
-// app.get("*", async (req, res) => {
-//   res.send("hello get");
-// });
 const init = async () => {
   try {
     const res = await axios.get(`${TELEGRAM_API}/setWebhook?url=${SERVER_URL}`);

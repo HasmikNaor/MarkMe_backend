@@ -1,4 +1,3 @@
-// this file responsible for all the api calls
 const axios = require("axios");
 const MY_TOKEN = "7826196918:AAGZpbD__Fe2h9TkxFbApXKLUlKFrMLOJmE";
 

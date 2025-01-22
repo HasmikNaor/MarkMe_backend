@@ -1,9 +1,7 @@
-//communication with telegram bot
 const { axiosInstance } = require("./axios");
 const Template = require("../../models/template");
 
 function sendMsgToUser(msgObj, msgTxt) {
-  // sends msgs to the user
   return axiosInstance.get("sendMessage", {
     chat_id: msgObj.chat.id,
     text: msgTxt,
@@ -15,7 +13,7 @@ async function fetchAllTemplates() {
     return await Template.find();
   } catch (err) {
     console.error("Error fetching templates:", err);
-    throw err; // Rethrow the error to handle it in calling functions
+    throw err;
   }
 }
 
@@ -29,7 +27,7 @@ const displayNamesList = (names) => {
 async function handleMsg(msgObj) {
   // handles messages from telegram bot
   const msgTxt = msgObj?.text || "";
-  let templates = await fetchAllTemplates(); // Fetch all templates
+  let templates = await fetchAllTemplates();
   templates = templates.sort((a, b) => {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;
