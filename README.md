@@ -1,12 +1,38 @@
 # Project Setup Instructions
 
+# Project Readme
+
+## Description
+
+This application was created using React, TypeScript, and MongoDB.
+
+## Getting Started
+
+### Prerequisites
+
+- Ensure you have MongoDB installed on your machine.
+
+### Activating MongoDB
+
+To activate MongoDB and connect to the database, run the following command in your terminal:
+
+```
+mongod
+```
+
+## Technologies Used
+
+- React
+- TypeScript
+- MongoDB
+
 ## Step 1: Install Dependencies and Start the Development Server
 
 1. Open a terminal and navigate to the project directory.
 2. Run the following commands:
    ```bash
+   mongod
    npm install
-   npm run dev
    ```
 
 ## Step 2: Configure ngrok
@@ -29,7 +55,7 @@ ngrok is required to enable the Telegram server to communicate with your local d
 2. Run the following command to authenticate ngrok:
 
    ```bash
-   ./ngrok authtoken <your-token>
+   ./ngrok <your-token>
    ```
 
    Replace `<your-token>` with the token you copied.
@@ -37,7 +63,7 @@ ngrok is required to enable the Telegram server to communicate with your local d
    If you encounter a `command not found` error, use the full path to the ngrok binary, for example:
 
    ```bash
-   ~/Documents/Downloads/ngrok authtoken <your-token>
+   ~/Downloads/ngrok <your-token>
    ```
 
 3. You should see a message confirming that the Auth Token was saved: `Authtoken saved to configuration file`.
@@ -47,7 +73,7 @@ ngrok is required to enable the Telegram server to communicate with your local d
 1. Run ngrok to expose your localhost port (e.g., 4040):
 
    ```bash
-   ~/Documents/Downloads/ngrok http 4040
+   ~/Downloads/ngrok http 4040
    ```
 
 2. Copy the generated public URL provided by ngrok.
@@ -58,8 +84,10 @@ ngrok is required to enable the Telegram server to communicate with your local d
 2. Set the `SERVER_URL` variable to the ngrok public URL you copied. For example:
 
    ```env
-   SERVER_URL=https://<your-ngrok-subdomain>.ngrok.io
+   SERVER_URL=https://<your-ngrok-subdomain>
    ```
+
+3. restart the app: npm run dev
 
    ## Starting a Conversation with the Bot
 
