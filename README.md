@@ -56,8 +56,16 @@ ngrok is required to enable the Telegram server to communicate with your local d
 
 1. Open the `.env` file in your project directory.
 2. Set the `SERVER_URL` variable to the ngrok public URL you copied. For example:
+
    ```env
    SERVER_URL=https://<your-ngrok-subdomain>.ngrok.io
    ```
+
+   ## Starting a Conversation with the Bot
+
+To start the conversation with the bot, ensure that you have completed the previous steps and the backend is running successfully. Then, follow these steps::
+
+1. Go to your Telegram app.
+2. Search for `@mark_me_assignment_bot` and start sending messages.
 
 Now your environment is ready, and the Telegram server can communicate with your application running on localhost.
