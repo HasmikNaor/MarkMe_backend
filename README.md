@@ -84,7 +84,7 @@ ngrok is required to enable the Telegram server to communicate with your local d
 2. Set the `SERVER_URL` variable to the ngrok public URL you copied. For example:
 
    ```env
-   SERVER_URL=https://<your-ngrok-subdomain>
+   SERVER_URL=<your-ngrok-subdomain>
    ```
 
 3. restart the app: npm run dev
